@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+springBoot {
+    mainClass = "com.careerdrill.restservice.Application"
+}
+
+group 'com.careerdrill'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.4.4'
+
+    implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: '2.4.0'
+    //implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.4.4'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.4.4'
+
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+test {
+    useJUnitPlatform()
+}

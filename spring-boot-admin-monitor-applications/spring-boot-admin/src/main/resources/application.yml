@@ -1,0 +1,24 @@
+server:
+  port : 8081
+
+# tag::customization-view-settings[]
+spring:
+  application:
+    name: adminserver
+  boot:
+    admin:
+      ui:
+        view-settings:
+          - name: "journal"
+            enabled: false
+        external-views:
+          - label: "🚀"
+            url: http://codecentric.de
+            order: 2000
+        cache:
+          no-cache: true
+          template-location: file:@project.basedir@/../../spring-boot-admin-server-ui/target/dist/
+          resource-locations: file:@project.basedir@/../../spring-boot-admin-server-ui/target/dist/
+          cache-templates: false
+          extension-resource-locations: file:@project.basedir@/../spring-boot-admin-sample-custom-ui/target/dist/
+# end::customization-view-settings[]
