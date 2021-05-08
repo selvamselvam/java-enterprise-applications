@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url "https://repo1.maven.org/maven2"
+    }
+}
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10
+    implementation group: 'com.oracle.database.jdbc', name: 'ojdbc10', version: '19.10.0.0'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
